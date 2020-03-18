@@ -5,8 +5,296 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/Toolbar.Light"
+            app:title="Home">
+            <SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"/>
+            <Button
+                android:id="@+id/filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:theme="@style/Button.Primary"
+                android:text="+ Apply Filters"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/spacing_large" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/filterlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n  Sort By\n"
+                android:fontFamily="sans-serif-black"
+                android:textSize="30dp"
+                style="@style/AppTheme.PopupOverlay"
+                android:textColor="@color/colorAccent"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_weight="1"
+                    android:layout_marginRight="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Price" />
+
+
+                <SeekBar
+                    android:id="@+id/seekBar2"
+                    android:layout_weight="1"
+                    android:min="200"
+                    android:max="2000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            ////////////////////////////////////
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/textView3"
+                    android:layout_weight="1"
+                    android:layout_marginRight="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Rank" />
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="enter the rank"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            ///////////////////////////////
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch3"
+                    android:layout_marginRight="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Date" />
+                <TextView
+                    android:id="@+id/calender1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="#212121"
+                    android:ems="10"
+                    android:hint="enter the date"
+                    android:inputType="date" />
+
+
+            </LinearLayout>
+            ///////////////////////
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textSize="30dp"
+
+                style="@style/AppTheme.PopupOverlay"
+                android:textColor="@color/colorAccent"
+                android:text="\n  Filter \n" />
+
+            <Switch
+                android:id="@+id/switch4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="120dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="   Date between" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/calender2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:textColor="#212121"
+                    android:hint="enter the starting date"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/calender3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:textColor="#212121"
+                    android:hint="enter the ending date"
+                    android:inputType="date" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n"/>
+            <Switch
+                android:layout_width="match_parent"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginRight="120dp"
+                android:layout_height="wrap_content"
+                android:text="   Price Between" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="enter the starting price"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/editText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="enter the ending price"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\n"/>
+            <Switch
+                android:layout_marginRight="120dp"
+                android:layout_width="match_parent"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_height="wrap_content"
+                android:text="   Status" />
+
+            <CheckBox
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="250dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+
+
+                android:text="Working" />
+
+            <CheckBox
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginRight="250dp"
+                android:text="Not Working" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="100dp"
+                android:fontFamily="sans-serif-black"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Being Repaired" />
+
+
+            <Button
+                android:id="@+id/addfilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:theme="@style/Button.Accent.Borderless"
+                android:text="Add Filters"/>
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>
