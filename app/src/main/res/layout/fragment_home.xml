@@ -20,6 +20,7 @@
             app:theme="@style/Toolbar.Light"
             app:title="Home">
             <SearchView
+                android:id="@+id/searchview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="visible"/>
@@ -112,6 +113,7 @@
                     android:id="@+id/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="enter the rank"
@@ -159,10 +161,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:textSize="30dp"
-
                 style="@style/AppTheme.PopupOverlay"
                 android:textColor="@color/colorAccent"
-                android:text="\n  Filter \n" />
+                android:text="\n  Filter By \n" />
 
             <Switch
                 android:id="@+id/switch4"
@@ -188,7 +189,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:textColor="#212121"
-                    android:hint="enter the starting date"
+                    android:hint="starting date"
                     android:inputType="date" />
 
                 <TextView
@@ -200,7 +201,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:textColor="#212121"
-                    android:hint="enter the ending date"
+                    android:hint="ending date"
                     android:inputType="date" />
 
             </LinearLayout>
@@ -225,9 +226,10 @@
                     android:id="@+id/editText7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="enter the starting price"
+                    android:hint="starting price"
                     android:inputType="number" />
 
                 <EditText
@@ -235,8 +237,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:ems="10"
-                    android:hint="enter the ending price"
+                    android:hint="ending price"
                     android:inputType="number" />
 
 
@@ -262,8 +265,6 @@
                 android:fontFamily="sans-serif-black"
                 android:textSize="20dp"
                 android:textColor="@color/colorPrimaryDark"
-
-
                 android:text="Working" />
 
             <CheckBox

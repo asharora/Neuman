@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     LinearLayout linearLayout;
     TextView calendar1,calendar2,calendar3;
     DatePickerDialog.OnDateSetListener mDatasetListener;
+    SearchView searchView;
     private View view;
 
     @Override
@@ -47,6 +49,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         calendar1=getView().findViewById(R.id.calender1);
         calendar2=getView().findViewById(R.id.calender2);
         calendar3=getView().findViewById(R.id.calender3);
+        searchView=getView().findViewById(R.id.searchview);
 
         ////////////////////////////////////////////////////////////
         calendar1.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +135,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 linearLayout.setVisibility(View.INVISIBLE);
             }
         });
+
+
     }
 
 
